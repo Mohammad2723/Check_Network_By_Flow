@@ -30,11 +30,22 @@ class MainActivity : ComponentActivity() {
     //define checkConnection
     private lateinit var checkConnection: CheckConnection
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // fill value checkConnection
         checkConnection = CheckConnectionImpl(context = applicationContext)
+
+        /*
+        for xml you can use blow code
+        
+        checkConnection.observe().onEach{
+              do somethings with xml views
+        }
+
+         */
+
 
         setContent {
             val networkStatus = checkConnection.observe()
